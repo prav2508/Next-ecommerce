@@ -37,7 +37,7 @@ function Login() {
         
           login_service(username, password);
         
-        console.log(islogged_in);
+        
           setLoading(false);
 
           setTimeout(() => { window.location.reload() }, 3000);
@@ -48,7 +48,6 @@ function Login() {
 
         if (islogged_in) {
             
-            console.log("login success",islogged_in);
           return <Redirect to={"/home"}/>
         }
         

@@ -181,6 +181,17 @@ public class Controller {
 	}
 	
 	
+	@PostMapping("/order/listbyusername")
+	public ResponseEntity<?> getUsersOrderList(@RequestBody UserCartModel userorder){
+		
+		Users u1 = userdao.findByUsername(userorder.getUsername());
+		List<Orders> orde = orderdao.findUserOrder(u1.getId());
+		
+	
+		return ResponseEntity.ok(orde);
+	}
+	
+	
 	@PostMapping("/cart/add")
 	public ResponseEntity<?> addItemstoCart(@RequestBody AddItemToCartModel cart_items){
 		
@@ -206,7 +217,7 @@ public class Controller {
 	}
 	
 	
-	@GetMapping("/cart/{cart_id}/complete")
+	@PostMapping("/cart/{cart_id}/complete")
 	
 	public ResponseEntity<?> checkoutacart(@PathVariable("cart_id") int cart_id,@RequestBody CheckoutCartModel checkout_cart_model){
 		

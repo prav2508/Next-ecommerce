@@ -12,7 +12,7 @@ function ItemList() {
     const [cartlist,setCartlist] = useState({})
     // const[token,setToken] = useState(gettoken())
     useEffect(() => {
-        console.log(gettoken())
+       
 
         const requestOptions = {
             method: 'GET',

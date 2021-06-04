@@ -43,19 +43,37 @@ export const isloggedin = ()=>{
 
 export const gettoken = ()=>{
     if(sessionStorage.getItem('next_user')){
-        //console.log(sessionStorage.getItem('next_user').json().jwt_token)
+       
         const token = JSON.parse(sessionStorage.getItem('next_user')).jwt_token
-console.log(token)
+
         return token
     }
 }
 
 export const getusername = ()=>{
     if(sessionStorage.getItem('next_user')){
-        //console.log(sessionStorage.getItem('next_user').json().jwt_token)
+       
         const username = JSON.parse(sessionStorage.getItem('next_user')).username
-console.log(username)
+
         return username
+    }
+}
+
+export const getpassword = ()=>{
+    if(sessionStorage.getItem('next_user')){
+      
+        const pass = JSON.parse(sessionStorage.getItem('next_user')).password
+
+        return pass
+    }
+}
+
+export const getcartid = ()=>{
+    if(sessionStorage.getItem('next_user')){
+      
+        const cartid = JSON.parse(sessionStorage.getItem('next_user')).cart.id
+
+        return cartid
     }
 }
 
