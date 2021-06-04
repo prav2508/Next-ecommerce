@@ -23,9 +23,42 @@ export const  login_service = (username,password)=>{
         body: JSON.stringify({ username: username,password:password })
     };
 
-    fetch('http://localhost:8080/basic/api/user/login', requestOptions)
+    fetch('/basic/api/user/login', requestOptions)
         .then(response => response.json())
-        .then(data => sessionStorage.setItem("next_user",JSON.stringify(data)));
+        .then(data => 
+            
+            data.jwt_token?sessionStorage.setItem("next_user",JSON.stringify(data)):alert("Invalid username or password"));
 
 
 }   
+
+
+export const isloggedin = ()=>{
+    if(sessionStorage.getItem('next_user')){
+        return true
+    }else{
+        return false
+    }
+}
+
+export const gettoken = ()=>{
+    if(sessionStorage.getItem('next_user')){
+        //console.log(sessionStorage.getItem('next_user').json().jwt_token)
+        const token = JSON.parse(sessionStorage.getItem('next_user')).jwt_token
+console.log(token)
+        return token
+    }
+}
+
+export const getusername = ()=>{
+    if(sessionStorage.getItem('next_user')){
+        //console.log(sessionStorage.getItem('next_user').json().jwt_token)
+        const username = JSON.parse(sessionStorage.getItem('next_user')).username
+console.log(username)
+        return username
+    }
+}
+
+export const logout = ()=> {
+    sessionStorage.removeItem('next_user')
+}

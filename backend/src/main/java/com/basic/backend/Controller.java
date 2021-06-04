@@ -145,6 +145,16 @@ public class Controller {
 		return ResponseEntity.ok(users_list);
 	}
 	
+	
+	@CrossOrigin
+	@PostMapping("/user/cart")
+	public ResponseEntity<?> getusercart(@RequestBody UserCartModel usercart) {
+		
+		Cart ucart = userdao.findByUsername(usercart.getUsername()).getCart();
+		return ResponseEntity.ok(ucart);
+	}
+	
+	
 	@CrossOrigin
 	@GetMapping("/item/list")
 	public ResponseEntity<?> getAllItems(){
