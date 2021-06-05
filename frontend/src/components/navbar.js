@@ -115,7 +115,7 @@ function Navbar() {
   
   }
 
-  const text = <span className='lead'>{title}</span>;
+  const text = <span className='font-weight-bold'>{title}</span>;
   const cart_content = (
     <div>
       <span>{cartlist.id?'Cart ID: '+cartlist.id:''}</span>
