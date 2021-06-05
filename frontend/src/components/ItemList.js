@@ -20,7 +20,7 @@ function ItemList() {
             
         };
     
-        fetch('/basic/api/item/list', requestOptions)
+        fetch('https://next-ecomm.herokuapp.com/basic/api/item/list', requestOptions)
         .then(response => response.json())
         .then(data => setItemList(data));
        
@@ -31,7 +31,7 @@ function ItemList() {
             
         };
         
-        fetch('/basic/api/user/cart', requestpOptions)
+        fetch('https://next-ecomm.herokuapp.com/basic/api/user/cart', requestpOptions)
         .then(response => response.json())
         .then(data => setCartlist(data));
                 }, [cartlist])
@@ -54,7 +54,7 @@ const addtocart = (itemid)=>{
         
     };
     
-    fetch('/basic/api/cart/add', requestOptions)
+    fetch('https://next-ecomm.herokuapp.com/basic/api/cart/add', requestOptions)
     .then(response => response.json())
     .then(data => setCartlist(data));
     openNotification()

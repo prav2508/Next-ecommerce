@@ -23,7 +23,7 @@ export const  login_service = (username,password)=>{
         body: JSON.stringify({ username: username,password:password })
     };
 
-    fetch('/basic/api/user/login', requestOptions)
+    fetch('https://next-ecomm.herokuapp.com/basic/api/user/login', requestOptions)
         .then(response => response.json())
         .then(data => 
             

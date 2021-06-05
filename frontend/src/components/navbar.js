@@ -22,7 +22,7 @@ function Navbar() {
 
     };
 
-    fetch('/basic/api/user/cart', requestOptions)
+    fetch('https://next-ecomm.herokuapp.com/basic/api/user/cart', requestOptions)
       .then(response => response.json())
       .then(data => setCartDetail(data));
   }
@@ -37,7 +37,7 @@ function Navbar() {
       body: JSON.stringify({ username: getusername() })
     };
 
-    fetch('/basic/api/order/listbyusername', requestpOptions)
+    fetch('https://next-ecomm.herokuapp.com/basic/api/order/listbyusername', requestpOptions)
       .then(response => response.json())
       .then(data => setOrderlist(data));
 
@@ -54,7 +54,7 @@ function Navbar() {
         body: JSON.stringify({ jwt: gettoken() })
       };
   
-      fetch('/basic/api/cart/'+cartdetail.id+'/complete', requestpOptions)
+      fetch('https://next-ecomm.herokuapp.com/basic/api/cart/'+cartdetail.id+'/complete', requestpOptions)
         .then(response => response.json())
         .then(data => console.log(data));
       const args = {
@@ -93,7 +93,7 @@ function Navbar() {
 
     };
 
-    fetch('/basic/api/user/cart', requestOptions)
+    fetch('https://next-ecomm.herokuapp.com/basic/api/user/cart', requestOptions)
       .then(response => response.json())
       .then(data => setCartlist(data));
 
@@ -109,7 +109,7 @@ function Navbar() {
       body: JSON.stringify({ username: getusername() })
     };
 
-    fetch('/basic/api/order/listbyusername', requestpOptions)
+    fetch('https://next-ecomm.herokuapp.com/basic/api/order/listbyusername', requestpOptions)
       .then(response => response.json())
       .then(data => setOrderlist(data));
   
